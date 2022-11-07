@@ -11,8 +11,8 @@ def read_items(file_name):
     return laptop, mobile, soap, duck
 
 def join_products():
-    amazon_items = read_items('Amazon_20_RPA.xlsx');
-    flipkart_items = read_items('Flipkart_20_RPA.xlsx');
+    amazon_items = read_items('./src/Amazon_20_RPA.xlsx');
+    flipkart_items = read_items('./src/Flipkart_20_RPA.xlsx');
     
     items = []
     for i in range(len(amazon_items)):

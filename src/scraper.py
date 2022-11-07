@@ -3,7 +3,7 @@ from os import environ
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-from temp import productItems
+from .temp import productItems
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from amazoncaptcha import AmazonCaptcha
@@ -31,7 +31,7 @@ def get_items(driver, item):
     # except: pass
     
     print(productItems)
-    return productItems
+    return productItems[item]
     
     
 def lookup_item(item) -> pd.DataFrame:
