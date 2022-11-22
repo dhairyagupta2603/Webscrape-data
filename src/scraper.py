@@ -3,7 +3,6 @@ from os import environ
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-from .temp import productItems
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from amazoncaptcha import AmazonCaptcha
@@ -27,8 +26,7 @@ def get_items(driver, item):
     
     item_links = driver.find_elements(By.XPATH, r'//div[starts-with(@data-cel-widget,"search_result")]//descendant::h2[@class="a-size-mini a-spacing-none a-color-base s-line-clamp-2"]//child::a')
 
-    # try: ProductItems  = pd.DataFrame([item_names, item_prices, item_links], columns=['Name', 'Price', 'Link'])
-    # except: pass
+    productItems  = pd.DataFrame([item_names, item_prices, item_links], columns=['Name', 'Price', 'Link'])
     
     print(productItems)
     return productItems[item]
